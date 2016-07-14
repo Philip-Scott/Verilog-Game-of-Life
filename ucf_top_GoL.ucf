@@ -1,0 +1,28 @@
+NET "red_out[0]" LOC = "C14";
+NET "red_out[1]" LOC = "D13";
+NET "red_out[2]" LOC = "F13";
+
+NET "green_out[0]" LOC = "F14";
+NET "green_out[1]" LOC = "G13";
+NET "green_out[2]" LOC = "G14";
+
+NET "blue_out[0]" LOC = "H13";
+NET "blue_out[1]" LOC = "J13";
+
+NET "horiz_sync_out" LOC = "J14";
+NET "vert_sync_out" LOC = "K13";
+
+NET "next_i" LOC = "G12";
+NET "preset_i" LOC = "C11";
+
+NET "clk_50MHz_i" LOC = "B8"; # Bank = 0, Signal name = MCLK reloj interno
+NET "clk_50MHz_i" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "switches[0]" LOC = "N3";
+NET "switches[1]" LOC = "E2";
+NET "switches[2]" LOC = "F3";
+NET "switches[3]" LOC = "G3";
+NET "switches[4]" LOC = "B4";
+NET "switches[5]" LOC = "K3";
+NET "switches[6]" LOC = "L3";
+NET "switches[7]" LOC = "P11";

@@ -1,0 +1,46 @@
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top_GoF.twx top_GoF.ncd -o top_GoF.twr top_GoF.pcf -ucf ucf_top_GoL.ucf 
+bitgen -intstyle ise -f top_GoF.ut top_GoF.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top_GoF.twx top_GoF.ncd -o top_GoF.twr top_GoF.pcf -ucf ucf_top_GoL.ucf 
+bitgen -intstyle ise -f top_GoF.ut top_GoF.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top_GoF.twx top_GoF.ncd -o top_GoF.twr top_GoF.pcf -ucf ucf_top_GoL.ucf 
+bitgen -intstyle ise -f top_GoF.ut top_GoF.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.xst" -ofn "C:/Xilinx/Proyects/Game_of_Life/top_GoF.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ucf_top_GoL.ucf -p xc3s100e-cp132-4 top_GoF.ngc top_GoF.ngd  
+map -intstyle ise -p xc3s100e-cp132-4 -cm area -ir off -pr off -c 100 -o top_GoF_map.ncd top_GoF.ngd top_GoF.pcf 
+par -w -intstyle ise -ol high -t 1 top_GoF_map.ncd top_GoF.ncd top_GoF.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top_GoF.twx top_GoF.ncd -o top_GoF.twr top_GoF.pcf -ucf ucf_top_GoL.ucf 
+bitgen -intstyle ise -f top_GoF.ut top_GoF.ncd 

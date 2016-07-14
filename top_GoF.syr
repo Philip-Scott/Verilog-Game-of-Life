@@ -1,0 +1,874 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.35 secs
+ 
+--> Reading design: top_GoF.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_GoF.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_GoF"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : top_GoF
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "reglas.v" in library work
+Compiling verilog file "super_sipo.v" in library work
+Module <reglas> compiled
+Compiling verilog file "row_calculator.v" in library work
+Module <super_sipo> compiled
+Compiling verilog file "FSM_LifeControler.v" in library work
+Module <row_calculator> compiled
+Compiling verilog file "FSM.v" in library work
+Module <LifeFSM> compiled
+Compiling verilog file "contador_mod_n.v" in library work
+Module <FSM> compiled
+Compiling verilog file "VGA_ctrler.v" in library work
+Module <contador_mod_n> compiled
+Compiling verilog file "top_debouncer.v" in library work
+Module <VGA_ctrler> compiled
+Compiling verilog file "life_controler.v" in library work
+Module <top_debouncer> compiled
+Compiling verilog file "../BlockRAM_single_port/RAM_GoL.v" in library work
+Module <life_controler> compiled
+Compiling verilog file "top_GoF.v" in library work
+Module <RAM_GoL> compiled
+Module <top_GoF> compiled
+No errors in compilation
+Analysis of file <"top_GoF.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top_GoF> in library <work>.
+
+Analyzing hierarchy for module <top_debouncer> in library <work>.
+
+Analyzing hierarchy for module <RAM_GoL> in library <work>.
+
+Analyzing hierarchy for module <life_controler> in library <work>.
+
+Analyzing hierarchy for module <VGA_ctrler> in library <work>.
+
+Analyzing hierarchy for module <FSM> in library <work> with parameters.
+	ALTO = "10"
+	BAJO = "00"
+	DLY1 = "01"
+	DLY2 = "11"
+
+Analyzing hierarchy for module <contador_mod_n> in library <work> with parameters.
+	DW = "00000000000000000000000000010101"
+	N = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <LifeFSM> in library <work> with parameters.
+	IDLE = "00"
+	READ = "01"
+	WAIT = "11"
+	WRITE = "10"
+
+Analyzing hierarchy for module <super_sipo> in library <work>.
+
+Analyzing hierarchy for module <row_calculator> in library <work>.
+
+Analyzing hierarchy for module <contador_mod_n> in library <work> with parameters.
+	DW = "00000000000000000000000000000100"
+	N = "00000000000000000000000000001111"
+
+Analyzing hierarchy for module <contador_mod_n> in library <work> with parameters.
+	DW = "00000000000000000000000000000110"
+	N = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <contador_mod_n> in library <work> with parameters.
+	DW = "00000000000000000000000000000100"
+	N = "00000000000000000000000000010100"
+
+Analyzing hierarchy for module <reglas> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top_GoF>.
+Module <top_GoF> is correct for synthesis.
+ 
+Analyzing module <top_debouncer> in library <work>.
+Module <top_debouncer> is correct for synthesis.
+ 
+Analyzing module <FSM> in library <work>.
+	ALTO = 2'b10
+	BAJO = 2'b00
+	DLY1 = 2'b01
+	DLY2 = 2'b11
+Module <FSM> is correct for synthesis.
+ 
+Analyzing module <contador_mod_n.1> in library <work>.
+	DW = 32'sb00000000000000000000000000010101
+	N = 32'sb00000000000000000000000000000100
+Module <contador_mod_n.1> is correct for synthesis.
+ 
+Analyzing module <RAM_GoL> in library <work>.
+INFO:Xst:1607 - Contents of array <locations> may be accessed with an index that does not cover the full array size.
+INFO:Xst:1607 - Contents of array <locations> may be accessed with an index that does not cover the full array size.
+INFO:Xst:1607 - Contents of array <locations> may be accessed with an index that does not cover the full array size.
+Module <RAM_GoL> is correct for synthesis.
+ 
+Analyzing module <life_controler> in library <work>.
+Module <life_controler> is correct for synthesis.
+ 
+Analyzing module <LifeFSM> in library <work>.
+	IDLE = 2'b00
+	READ = 2'b01
+	WAIT = 2'b11
+	WRITE = 2'b10
+Module <LifeFSM> is correct for synthesis.
+ 
+Analyzing module <super_sipo> in library <work>.
+Module <super_sipo> is correct for synthesis.
+ 
+Analyzing module <row_calculator> in library <work>.
+Module <row_calculator> is correct for synthesis.
+ 
+Analyzing module <reglas> in library <work>.
+Module <reglas> is correct for synthesis.
+ 
+Analyzing module <contador_mod_n.2> in library <work>.
+	DW = 32'sb00000000000000000000000000000100
+	N = 32'sb00000000000000000000000000001111
+Module <contador_mod_n.2> is correct for synthesis.
+ 
+Analyzing module <VGA_ctrler> in library <work>.
+Module <VGA_ctrler> is correct for synthesis.
+ 
+Analyzing module <contador_mod_n.3> in library <work>.
+	DW = 32'sb00000000000000000000000000000110
+	N = 32'sb00000000000000000000000000100000
+Module <contador_mod_n.3> is correct for synthesis.
+ 
+Analyzing module <contador_mod_n.4> in library <work>.
+	DW = 32'sb00000000000000000000000000000100
+	N = 32'sb00000000000000000000000000010100
+Module <contador_mod_n.4> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <RAM_GoL>.
+    Related source file is "../BlockRAM_single_port/RAM_GoL.v".
+    Found 16x20-bit dual-port RAM <Mram_locations> for signal <locations>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <RAM_GoL> synthesized.
+
+
+Synthesizing Unit <FSM>.
+    Related source file is "FSM.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <Edo_Actual> of Case statement line 72 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <Edo_Actual> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <Edo_Actual>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk_50MHz_i               (rising_edge)        |
+    | Reset              | rst_async_la_i            (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <FSM> synthesized.
+
+
+Synthesizing Unit <contador_mod_n_1>.
+    Related source file is "contador_mod_n.v".
+    Found 21-bit register for signal <conteo_salida_o>.
+    Found 21-bit adder for signal <entrada_reg_PIPO$addsub0000> created at line 39.
+    Found 21-bit comparator greatequal for signal <salida_comparador>.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <contador_mod_n_1> synthesized.
+
+
+Synthesizing Unit <LifeFSM>.
+    Related source file is "FSM_LifeControler.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <Edo_Actual> of Case statement line 77 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <Edo_Actual> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <Edo_Actual>.
+    Found 4-bit register for signal <Edo_Actual>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <LifeFSM> synthesized.
+
+
+Synthesizing Unit <super_sipo>.
+    Related source file is "super_sipo.v".
+    Found 60-bit register for signal <temp>.
+    Summary:
+	inferred  60 D-type flip-flop(s).
+Unit <super_sipo> synthesized.
+
+
+Synthesizing Unit <contador_mod_n_2>.
+    Related source file is "contador_mod_n.v".
+    Found 4-bit register for signal <conteo_salida_o>.
+    Found 4-bit adder for signal <entrada_reg_PIPO$addsub0000> created at line 39.
+    Found 4-bit comparator greatequal for signal <salida_comparador>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <contador_mod_n_2> synthesized.
+
+
+Synthesizing Unit <reglas>.
+    Related source file is "reglas.v".
+    Found 2-bit adder for signal <suma$addsub0001> created at line 27.
+    Found 3-bit adder for signal <suma$addsub0003> created at line 27.
+    Found 3-bit adder for signal <suma$addsub0004> created at line 27.
+    Found 3-bit adder for signal <suma$addsub0005> created at line 27.
+    Found 3-bit adder carry out for signal <suma$addsub0006>.
+    Found 1-bit adder carry out for signal <suma$addsub0007> created at line 27.
+    Found 2-bit adder carry out for signal <suma$addsub0008> created at line 27.
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+Unit <reglas> synthesized.
+
+
+Synthesizing Unit <contador_mod_n_3>.
+    Related source file is "contador_mod_n.v".
+    Found 6-bit register for signal <conteo_salida_o>.
+    Found 6-bit adder for signal <entrada_reg_PIPO$addsub0000> created at line 39.
+    Found 6-bit comparator greatequal for signal <salida_comparador>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <contador_mod_n_3> synthesized.
+
+
+Synthesizing Unit <contador_mod_n_4>.
+    Related source file is "contador_mod_n.v".
+    Found 4-bit up counter for signal <conteo_salida_o>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <contador_mod_n_4> synthesized.
+
+
+Synthesizing Unit <top_debouncer>.
+    Related source file is "top_debouncer.v".
+Unit <top_debouncer> synthesized.
+
+
+Synthesizing Unit <VGA_ctrler>.
+    Related source file is "VGA_ctrler.v".
+WARNING:Xst:1780 - Signal <pixel_row> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pixel_column> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <red_out> equivalent to <green_out> has been removed
+    Found 1-bit register for signal <vert_sync_out>.
+    Found 2-bit register for signal <blue_out>.
+    Found 1-bit register for signal <horiz_sync_out>.
+    Found 3-bit register for signal <green_out>.
+    Found 1-bit register for signal <clk_25>.
+    Found 1-bit register for signal <en_counter>.
+    Found 10-bit up counter for signal <h_count>.
+    Found 1-bit register for signal <horiz_sync>.
+    Found 10-bit comparator greater for signal <horiz_sync$cmp_gt0000> created at line 91.
+    Found 10-bit comparator less for signal <horiz_sync$cmp_lt0000> created at line 91.
+    Found 21-bit up counter for signal <Scrn_cntr>.
+    Found 10-bit up counter for signal <v_count>.
+    Found 10-bit comparator greater for signal <v_count$cmp_gt0000> created at line 108.
+    Found 10-bit comparator greater for signal <v_count$cmp_gt0001> created at line 108.
+    Found 1-bit register for signal <vert_sync>.
+    Found 10-bit comparator greater for signal <vert_sync$cmp_gt0000> created at line 120.
+    Found 10-bit comparator less for signal <vert_sync$cmp_lt0000> created at line 120.
+    Found 1-bit register for signal <video_on_h>.
+    Found 10-bit comparator lessequal for signal <video_on_h$cmp_le0000> created at line 96.
+    Found 1-bit register for signal <video_on_v>.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0000> created at line 722.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0001> created at line 724.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0002> created at line 726.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0003> created at line 728.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0004> created at line 730.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0005> created at line 732.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0006> created at line 734.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0007> created at line 736.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0008> created at line 738.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0009> created at line 740.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0010> created at line 742.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0011> created at line 744.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0012> created at line 746.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0013> created at line 748.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0014> created at line 750.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0015> created at line 752.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0016> created at line 754.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0017> created at line 756.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0018> created at line 758.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0019> created at line 760.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0020> created at line 680.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0021> created at line 638.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0022> created at line 596.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0023> created at line 554.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0024> created at line 512.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0025> created at line 470.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0026> created at line 428.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0027> created at line 386.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0028> created at line 344.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0029> created at line 302.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0030> created at line 260.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0031> created at line 218.
+    Found 10-bit comparator greatequal for signal <video_on_v$cmp_ge0032> created at line 176.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0000> created at line 722.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0001> created at line 722.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0002> created at line 724.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0003> created at line 726.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0004> created at line 728.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0005> created at line 730.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0006> created at line 732.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0007> created at line 734.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0008> created at line 736.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0009> created at line 738.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0010> created at line 740.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0011> created at line 742.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0012> created at line 744.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0013> created at line 746.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0014> created at line 748.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0015> created at line 750.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0016> created at line 752.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0017> created at line 754.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0018> created at line 756.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0019> created at line 758.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0020> created at line 760.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0021> created at line 680.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0022> created at line 638.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0023> created at line 596.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0024> created at line 554.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0025> created at line 512.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0026> created at line 470.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0027> created at line 428.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0028> created at line 386.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0029> created at line 344.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0030> created at line 302.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0031> created at line 260.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0032> created at line 218.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0033> created at line 176.
+    Found 10-bit comparator less for signal <video_on_v$cmp_lt0034> created at line 134.
+    Found 1-bit 16-to-1 multiplexer for signal <video_on_v$mux0000> created at line 133.
+    Summary:
+	inferred   3 Counter(s).
+	inferred  13 D-type flip-flop(s).
+	inferred  75 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <VGA_ctrler> synthesized.
+
+
+Synthesizing Unit <row_calculator>.
+    Related source file is "row_calculator.v".
+Unit <row_calculator> synthesized.
+
+
+Synthesizing Unit <life_controler>.
+    Related source file is "life_controler.v".
+    Found 3-bit subtractor for signal <ram_addr_o$sub0000> created at line 74.
+    Found 3-bit subtractor for signal <ram_addr_o$sub0001> created at line 74.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <life_controler> synthesized.
+
+
+Synthesizing Unit <top_GoF>.
+    Related source file is "top_GoF.v".
+Unit <top_GoF> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x20-bit dual-port RAM                               : 1
+# Adders/Subtractors                                   : 145
+ 1-bit adder carry out                                 : 20
+ 2-bit adder                                           : 20
+ 2-bit adder carry out                                 : 20
+ 21-bit adder                                          : 1
+ 3-bit adder                                           : 60
+ 3-bit adder carry out                                 : 20
+ 3-bit subtractor                                      : 2
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 4-bit up counter                                      : 1
+# Registers                                            : 74
+ 1-bit register                                        : 68
+ 2-bit register                                        : 1
+ 21-bit register                                       : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 2
+ 6-bit register                                        : 1
+# Comparators                                          : 78
+ 10-bit comparator greatequal                          : 33
+ 10-bit comparator greater                             : 4
+ 10-bit comparator less                                : 37
+ 10-bit comparator lessequal                           : 1
+ 21-bit comparator greatequal                          : 1
+ 4-bit comparator greatequal                           : 1
+ 6-bit comparator greatequal                           : 1
+# Multiplexers                                         : 1
+ 1-bit 16-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <debu/fsm/Edo_Actual/FSM> on signal <Edo_Actual[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+INFO:Xst:2261 - The FF/Latch <blue_out_0> in Unit <vga> is equivalent to the following 4 FFs/Latches, which will be removed : <blue_out_1> <green_out_0> <green_out_1> <green_out_2> 
+
+Synthesizing (advanced) Unit <RAM_GoL>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_locations> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 20-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we_i>          | high     |
+    |     addrA          | connected to signal <controler_address_i> |          |
+    |     diA            | connected to signal <controler_data_i> |          |
+    |     doA            | connected to signal <controler_data_o> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 16-word x 20-bit                    |          |
+    |     addrB          | connected to signal <display_address_i> |          |
+    |     doB            | connected to signal <display_data_o> |          |
+    -----------------------------------------------------------------------
+Unit <RAM_GoL> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 16x20-bit dual-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 145
+ 1-bit adder carry out                                 : 20
+ 2-bit adder                                           : 20
+ 2-bit adder carry out                                 : 20
+ 21-bit adder                                          : 1
+ 3-bit adder                                           : 60
+ 3-bit adder carry out                                 : 20
+ 3-bit subtractor                                      : 2
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 2
+ 4-bit up counter                                      : 1
+# Registers                                            : 108
+ Flip-Flops                                            : 108
+# Comparators                                          : 78
+ 10-bit comparator greatequal                          : 33
+ 10-bit comparator greater                             : 4
+ 10-bit comparator less                                : 37
+ 10-bit comparator lessequal                           : 1
+ 21-bit comparator greatequal                          : 1
+ 4-bit comparator greatequal                           : 1
+ 6-bit comparator greatequal                           : 1
+# Multiplexers                                         : 1
+ 1-bit 16-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <green_out_0> in Unit <VGA_ctrler> is equivalent to the following 4 FFs/Latches, which will be removed : <green_out_1> <green_out_2> <blue_out_0> <blue_out_1> 
+
+Optimizing unit <top_GoF> ...
+
+Optimizing unit <contador_mod_n_1> ...
+
+Optimizing unit <LifeFSM> ...
+
+Optimizing unit <super_sipo> ...
+
+Optimizing unit <contador_mod_n_2> ...
+
+Optimizing unit <reglas> ...
+
+Optimizing unit <contador_mod_n_3> ...
+WARNING:Xst:1710 - FF/Latch <conteo_salida_o_5> (without init value) has a constant value of 0 in block <contador_mod_n_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <conteo_salida_o_5> (without init value) has a constant value of 0 in block <contador_mod_n_3>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <VGA_ctrler> ...
+
+Optimizing unit <row_calculator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_GoF, actual ratio is 28.
+FlipFlop vga/row_counter/conteo_salida_o_0 has been replicated 1 time(s)
+FlipFlop vga/row_counter/conteo_salida_o_1 has been replicated 1 time(s)
+FlipFlop vga/row_counter/conteo_salida_o_2 has been replicated 1 time(s)
+FlipFlop vga/row_counter/conteo_salida_o_3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 133
+ Flip-Flops                                            : 133
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top_GoF.ngr
+Top Level Output File Name         : top_GoF
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 22
+
+Cell Usage :
+# BELS                             : 505
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 38
+#      LUT2                        : 34
+#      LUT2_L                      : 6
+#      LUT3                        : 31
+#      LUT3_D                      : 5
+#      LUT3_L                      : 14
+#      LUT4                        : 201
+#      LUT4_D                      : 14
+#      LUT4_L                      : 27
+#      MUXCY                       : 44
+#      MUXF5                       : 40
+#      MUXF6                       : 2
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 41
+# FlipFlops/Latches                : 133
+#      FD                          : 3
+#      FDC                         : 1
+#      FDCE                        : 82
+#      FDE                         : 19
+#      FDR                         : 16
+#      FDRE                        : 11
+#      FDSE                        : 1
+# RAMS                             : 20
+#      RAM16X1D                    : 20
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 22
+#      IBUF                        : 12
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                      227  out of    960    23%  
+ Number of Slice Flip Flops:            133  out of   1920     6%  
+ Number of 4 input LUTs:                415  out of   1920    21%  
+    Number used as logic:               375
+    Number used as RAMs:                 40
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of     83    26%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_50MHz_i                        | IBUF+BUFG              | 112   |
+vga/clk_251                        | BUFG                   | 41    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+---------------------------------------------------------------+------------------------+-------+
+Control Signal                                                 | Buffer(FF name)        | Load  |
+---------------------------------------------------------------+------------------------+-------+
+god/clark/rst_async_la_i_inv(god/clark/rst_async_la_i_inv601:O)| NONE(god/clark/temp_0) | 60    |
+rst_async_la_i                                                 | IBUF                   | 23    |
+---------------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 10.226ns (Maximum Frequency: 97.790MHz)
+   Minimum input arrival time before clock: 6.583ns
+   Maximum output required time after clock: 4.620ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50MHz_i'
+  Clock period: 7.580ns (frequency: 131.926MHz)
+  Total number of paths / destination ports: 2402 / 298
+-------------------------------------------------------------------------
+Delay:               7.580ns (Levels of Logic = 6)
+  Source:            god/clark/temp_8 (FF)
+  Destination:       ram/Mram_locations9 (RAM)
+  Source Clock:      clk_50MHz_i rising
+  Destination Clock: clk_50MHz_i rising
+
+  Data Path: god/clark/temp_8 to ram/Mram_locations9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            10   0.591   1.057  god/clark/temp_8 (god/clark/temp_8)
+     LUT2_L:I0->LO         1   0.704   0.104  god/rows/regla9/Madd_suma_addsub0007_lut<0>1 (god/rows/regla9/Madd_suma_addsub0007_lut<0>)
+     LUT4:I3->O            4   0.704   0.591  god/rows/regla9/Madd_suma_addsub0004_Madd_lut<0>1 (god/rows/regla9/Madd_suma_addsub0004_Madd_lut<0>)
+     LUT4_L:I3->LO         1   0.704   0.104  god/rows/regla9/Madd_suma_addsub0005_cy<0>11 (god/rows/regla9/Madd_suma_addsub0005_cy<0>)
+     LUT4:I3->O            1   0.704   0.424  _mux0000<8>79_SW0_SW0 (N178)
+     LUT4_L:I3->LO         1   0.704   0.104  _mux0000<8>79_SW0 (N154)
+     LUT4:I3->O            1   0.704   0.000  _mux0000<8>89 (_mux0000<8>)
+     RAM16X1D:D                0.381          ram/Mram_locations9
+    ----------------------------------------
+    Total                      7.580ns (5.196ns logic, 2.384ns route)
+                                       (68.5% logic, 31.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'vga/clk_251'
+  Clock period: 10.226ns (frequency: 97.790MHz)
+  Total number of paths / destination ports: 1640 / 85
+-------------------------------------------------------------------------
+Delay:               10.226ns (Levels of Logic = 9)
+  Source:            vga/row_counter/conteo_salida_o_3_1 (FF)
+  Destination:       vga/video_on_v (FF)
+  Source Clock:      vga/clk_251 rising
+  Destination Clock: vga/clk_251 rising
+
+  Data Path: vga/row_counter/conteo_salida_o_3_1 to vga/video_on_v
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             12   0.591   0.961  vga/row_counter/conteo_salida_o_3_1 (vga/row_counter/conteo_salida_o_3_1)
+     RAM16X1D:DPRA3->DPO    1   0.704   0.499  ram/Mram_locations17 (to_vga<16>)
+     LUT3:I1->O            1   0.704   0.000  vga/video_on_v_mux00011128_F (N168)
+     MUXF5:I0->O           1   0.321   0.424  vga/video_on_v_mux00011128 (vga/video_on_v_mux0001_bdd19)
+     LUT4:I3->O            8   0.704   0.757  vga/video_on_v_mux00015269 (vga/video_on_v_mux00015269)
+     MUXF5:S->O            1   0.739   0.424  vga/video_on_v_mux000131_SW2 (N50)
+     LUT4:I3->O            1   0.704   0.000  vga/Mmux_video_on_v_mux0000_5 (vga/Mmux_video_on_v_mux0000_5)
+     MUXF5:I1->O           1   0.321   0.000  vga/Mmux_video_on_v_mux0000_4_f5 (vga/Mmux_video_on_v_mux0000_4_f5)
+     MUXF6:I1->O           1   0.521   0.000  vga/Mmux_video_on_v_mux0000_3_f6 (vga/Mmux_video_on_v_mux0000_3_f6)
+     MUXF7:I1->O           1   0.521   0.420  vga/Mmux_video_on_v_mux0000_2_f7 (vga/video_on_v_mux00001)
+     FDR:R                     0.911          vga/video_on_v
+    ----------------------------------------
+    Total                     10.226ns (6.741ns logic, 3.485ns route)
+                                       (65.9% logic, 34.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50MHz_i'
+  Total number of paths / destination ports: 376 / 144
+-------------------------------------------------------------------------
+Offset:              6.583ns (Levels of Logic = 3)
+  Source:            preset_i (PAD)
+  Destination:       god/clark/temp_40 (FF)
+  Destination Clock: clk_50MHz_i rising
+
+  Data Path: preset_i to god/clark/temp_40
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            32   1.218   1.437  preset_i_IBUF (preset_i_IBUF)
+     LUT4:I0->O           60   0.704   1.271  _mux0001<3>1 (_mux0001<3>)
+     RAM16X1D:A3->SPO      1   1.225   0.420  ram/Mram_locations2 (controler_data<1>)
+     FDCE:D                    0.308          god/clark/temp_41
+    ----------------------------------------
+    Total                      6.583ns (3.455ns logic, 3.128ns route)
+                                       (52.5% logic, 47.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'vga/clk_251'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.620ns (Levels of Logic = 1)
+  Source:            vga/green_out_0 (FF)
+  Destination:       blue_out<1> (PAD)
+  Source Clock:      vga/clk_251 rising
+
+  Data Path: vga/green_out_0 to blue_out<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              8   0.591   0.757  vga/green_out_0 (vga/green_out_0)
+     OBUF:I->O                 3.272          blue_out_1_OBUF (blue_out<1>)
+    ----------------------------------------
+    Total                      4.620ns (3.863ns logic, 0.757ns route)
+                                       (83.6% logic, 16.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.20 secs
+ 
+--> 
+
+Total memory usage is 326832 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

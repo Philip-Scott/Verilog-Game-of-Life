@@ -1,0 +1,11 @@
+MO VGA_ctrler NULL VGA_ctrler.v vlg6D/_v_g_a__ctrler.bin 1462735391
+MO top_GoF NULL top_GoF.v vlg42/top___go_f.bin 1462735391
+MO contador_mod_n NULL contador_mod_n.v vlg3E/contador__mod__n.bin 1462735391
+MO top_debouncer NULL top_debouncer.v vlg75/top__debouncer.bin 1462735391
+MO LifeFSM NULL FSM_LifeControler.v vlg02/_life_f_s_m.bin 1462735391
+MO RAM_GoL NULL ../BlockRAM_single_port/RAM_GoL.v vlg1D/_r_a_m___go_l.bin 1462735391
+MO super_sipo NULL super_sipo.v vlg01/super__sipo.bin 1462735391
+MO FSM NULL FSM.v vlg42/_f_s_m.bin 1462735391
+MO row_calculator NULL row_calculator.v vlg15/row__calculator.bin 1462735391
+MO reglas NULL reglas.v vlg5E/reglas.bin 1462735391
+MO life_controler NULL life_controler.v vlg3F/life__controler.bin 1462735391

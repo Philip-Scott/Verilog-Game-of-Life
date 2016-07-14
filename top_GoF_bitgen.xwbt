@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\Proyects\Game_of_Life\top_GoF.ncd
+OUTFILE=C:\Xilinx\Proyects\Game_of_Life\top_GoF.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=C:\Xilinx\Proyects\Game_of_Life
+LICENSE=WebPack
+USER_INFO=211145443_0_0_611
